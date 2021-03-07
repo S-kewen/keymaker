@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.keymaker.dao.ApiDao">
+    <select id="getList" parameterType="com.cloud.keymaker.entity.Api" resultType="java.util.HashMap">
+        select id,type,state,title,description,count,add_time from api
+        <where>
+            <if test="aid!=null and aid!=''">and aid=#{aid}</if>
+            <if test="type!=null and type!=''">and type=#{type}</if>
+            <if test="state!=null and state!=''">and state=#{state}</if>
+            <if test="title!=null and title!=''">and title like CONCAT('%',#{title},'%')</if>
+        </where>
+    </select>
+    <insert id="insertOne" parameterType="com.cloud.keymaker.entity.Api">
+        insert into api values(0,#{aid},#{type},#{state},#{title},#{description},#{url},#{request_type},#{request_demo},#{response_type},#{remark},#{response_demo},CURRENT_TIMESTAMP())
+    </insert>
+    <delete id="deleteOne" parameterType="com.cloud.keymaker.entity.Api">
+        delete from api where id=#{id} limit 1
+    </delete>
+    <update id="updateOne" parameterType="com.cloud.keymaker.entity.Api">
+        update api
+        <set>
+            <if test="type!=null and type!=''">type=#{type},</if>
+            <if test="state!=null and state!=''">state=#{state},</if>
+            <if test="title!=null and title!=''">title=#{title},</if>
+            <if test="description!=null and description!=''">description=#{description},</if>
+            <if test="url!=null and url!=''">url=#{url},</if>
+            <if test="request_type!=null and request_type!=''">request_type=#{request_type},</if>
+            <if test="request_demo!=null and request_demo!=''">request_demo=#{request_demo},</if>
+            <if test="response_type!=null and response_type!=''">response_type=#{response_type},</if>
+            <if test="response_demo!=null and response_demo!=''">response_demo=#{response_demo},</if>
+            <if test="remark!=null">remark=#{remark},</if>
+        </set>
+        where id=#{id} limit 1
+    </update>
+    <select id="getCount" parameterType="com.cloud.keymaker.entity.Api" resultType="int">
+        select count(*) from api
+        <where>
+            <if test="aid!=null and aid!=''">and aid=#{aid}</if>
+            <if test="type!=null and type!=''">and type=#{type}</if>
+            <if test="state!=null and state!=''">and state=#{state}</if>
+            <if test="title!=null and title!=''">and title=#{title}</if>
+        </where>
+    </select>
+    <select id="getById" parameterType="Long" resultType="com.cloud.keymaker.entity.Api">
+        select id,type,state,title,description,url,request_type,request_demo,response_type,response_demo,add_time from api
+        where id=#{id}
+    </select>
+</mapper>

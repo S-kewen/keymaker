@@ -1,0 +1,1 @@
+java -jar com-keymaker-service-parameter-1.0-SNAPSHOT.jar

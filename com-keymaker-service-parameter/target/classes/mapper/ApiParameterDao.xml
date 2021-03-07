@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.keymaker.dao.ApiParameterDao">
+    <select id="getList" parameterType="com.cloud.keymaker.entity.ApiParameter" resultType="java.util.HashMap">
+        select id,aid,type,state,column_name,column_must,column_type,column_explain,add_time from api_parameter
+        <where>
+            <if test="aid!=null and aid!=''">and aid=#{aid}</if>
+            <if test="type!=null and type!=''">and type=#{type}</if>
+            <if test="state!=null and state!=''">and state=#{state}</if>
+        </where>
+    </select>
+    <insert id="insertOne" parameterType="com.cloud.keymaker.entity.ApiParameter">
+        insert into api_parameter values(0,#{aid},#{type},#{state},#{column_name},#{column_must},#{column_type},#{column_explain},CURRENT_TIMESTAMP())
+    </insert>
+    <delete id="deleteOne" parameterType="com.cloud.keymaker.entity.ApiParameter">
+        delete from api_parameter where id=#{id} limit 1
+    </delete>
+    <update id="updateOne" parameterType="com.cloud.keymaker.entity.ApiParameter">
+        update api_parameter
+        <set>
+            <if test="type!=null and type!=''">type=#{type},</if>
+            <if test="state!=null and state!=''">state=#{state},</if>
+            <if test="column_name!=null and column_name!=''">column_name=#{column_name},</if>
+            <if test="column_must!=null and column_must!=''">column_must=#{column_must},</if>
+            <if test="column_type!=null and column_type!=''">column_type=#{column_type},</if>
+            <if test="column_explain!=null and column_explain!=''">column_explain=#{column_explain},</if>
+            <if test="remark!=null">remark=#{remark},</if>
+        </set>
+        where id=#{id} limit 1
+    </update>
+    <select id="getCount" parameterType="com.cloud.keymaker.entity.ApiParameter" resultType="int">
+        select count(*) from api_parameter
+        <where>
+            <if test="aid!=null and aid!=''">and aid=#{aid}</if>
+            <if test="type!=null and type!=''">and type=#{type}</if>
+            <if test="state!=null and state!=''">and state=#{state}</if>
+            <if test="column_name!=null and column_name!=''">and column_name=#{column_name}</if>
+        </where>
+    </select>
+</mapper>

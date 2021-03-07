@@ -1,0 +1,9 @@
+com\cloud\keymaker\controller\UUIDController.class
+com\cloud\keymaker\ApiMain3001.class
+com\cloud\keymaker\hystrix\FallbackService.class
+com\cloud\keymaker\feign\UuidFeignService.class
+com\cloud\keymaker\config\FeignConfig.class
+com\cloud\keymaker\feign\IpFeignService.class
+com\cloud\keymaker\feign\StatisticFeignService.class
+com\cloud\keymaker\controller\IPController.class
+com\cloud\keymaker\config\ControllerExceptionHandler.class
