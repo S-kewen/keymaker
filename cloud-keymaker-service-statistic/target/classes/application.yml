@@ -66,4 +66,4 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.cloud.springcloud.entity.**
+  type-aliases-package: com.cloud.keymaker.entity.**

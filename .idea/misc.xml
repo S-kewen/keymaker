@@ -14,6 +14,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/cloud-keymaker-encrypt/pom.xml" />
         <option value="$PROJECT_DIR$/com-keymaker-commons/pom.xml" />
       </set>
     </option>

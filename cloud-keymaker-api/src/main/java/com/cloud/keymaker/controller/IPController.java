@@ -1,12 +1,16 @@
 package com.cloud.keymaker.controller;
 
 
+import cn.hutool.extra.servlet.ServletUtil;
 import com.cloud.keymaker.feign.IpFeignService;
 import com.cloud.keymaker.feign.StatisticFeignService;
 import com.cloud.keymaker.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @PackageName: com.cloud.keymaker.controller
@@ -26,6 +30,8 @@ public class IPController {
     @Autowired
     private IpFeignService ipFeignService;
 
+    @Autowired
+    private HttpServletRequest httpServletRequest;
     @RequestMapping("discovery")
     public Result discovery() {
         //服务发现
@@ -39,6 +45,9 @@ public class IPController {
 
     @RequestMapping("select")
     public Result select(String ip) {
+        if (ip==null || ip==""){
+            ip= ServletUtil.getClientIP(httpServletRequest);
+        }
         addCount();
         return ipFeignService.select(ip);
     }

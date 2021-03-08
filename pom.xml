@@ -17,6 +17,8 @@
       <module>cloud-keymaker-api</module>
       <module>cloud-keymaker-service-ip</module>
     <module>com-keymaker-service-parameter</module>
+    <module>cloud-keymaker-encrypt</module>
+    <module>cloud-keymaker-service-encrypt</module>
   </modules>
 
   <name>Maven</name>
