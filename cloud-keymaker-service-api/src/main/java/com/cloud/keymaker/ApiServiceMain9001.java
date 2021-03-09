@@ -2,6 +2,7 @@ package com.cloud.keymaker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableCaching
 public class ApiServiceMain9001 {
      public static void main(String[] args) {
         SpringApplication.run(ApiServiceMain9001.class, args);

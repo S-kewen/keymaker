@@ -2,6 +2,7 @@ package com.cloud.keymaker.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Date;
  * @Date: 2021-03-06 18:15
  */
 @Data
-public class Api {
+public class Api implements Serializable {
     private Long id;
     private Long aid;
     private int type;

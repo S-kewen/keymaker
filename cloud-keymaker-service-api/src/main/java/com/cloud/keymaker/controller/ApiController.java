@@ -10,6 +10,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,7 +42,8 @@ public class ApiController {
     private String application;
     @Resource
     private DiscoveryClient discoveryClient;
-
+//    @Resource
+//    CacheManager cacheManager;
     @RequestMapping("discovery")
     public Result discovery() {
         //服务发现
@@ -68,6 +72,7 @@ public class ApiController {
     }
 
     @RequestMapping("getApiInfo")
+    @Cacheable(cacheNames = "apiCache")
     public Result getById(Long id) {
         Api api = apiService.getById(id);
         if (api != null) {
@@ -80,4 +85,18 @@ public class ApiController {
     public Result getCount(){
         return new Result(StatusCode.OK, StatusMsg.OK,apiService.getCount(new Api()));
     }
+
+//    @RequestMapping("clearCache")
+//    public Result clearCache(String cacheName) {
+//        Cache cache = cacheManager.getCache(cacheName);
+//        cache.evict(null);
+//        return new Result(StatusCode.OK, StatusMsg.OK);
+//    }
+//
+//    @RequestMapping("putCache")
+//    public Result putCache(String cacheName) {
+//        Cache cache = cacheManager.getCache(cacheName);
+//        //cache.put();
+//        return new Result(StatusCode.OK, StatusMsg.OK);
+//    }
 }

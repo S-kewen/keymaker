@@ -39,7 +39,7 @@ public class EncryptController {
     }
 
     @RequestMapping("createRsaKey")
-    public Result create() {
+    public Result createRsaKey() {
         addCount();
         return encryptFeignService.createRsaKey();
     }

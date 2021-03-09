@@ -2,6 +2,8 @@ package com.cloud.keymaker.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @PackageName: com.cloud.keymaker.entity
  * @ClassName: IPResult
@@ -10,7 +12,7 @@ import lombok.Data;
  * @Date: 2021-03-06 23:29
  */
 @Data
-public class IPResult {
+public class IPResult implements Serializable {
     private String status;
     private String country;
     private String countryCode;

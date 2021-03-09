@@ -3,6 +3,8 @@ package com.cloud.keymaker.result;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @PackageName: com.boot.hellokebbi.pattern.result
  * @ClassName: Result
@@ -12,7 +14,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class Result {
+public class Result implements Serializable {
     private Integer code;
 
     private String msg;
