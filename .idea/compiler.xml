@@ -8,13 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-keymaker-commons" />
+        <module name="cloud-keymaker-service-uuid" />
         <module name="cloud-keymaker-service-ip" />
-        <module name="cloud-keymaker-console" />
+        <module name="cloud-keymaker-service-parameter" />
         <module name="cloud-keymaker-api" />
         <module name="cloud-keymaker-service-api" />
-        <module name="cloud-keymaker-service-uuid" />
+        <module name="cloud-keymaker-console" />
         <module name="cloud-keymaker-service-encrypt" />
-        <module name="com-keymaker-service-parameter" />
         <module name="cloud-keymaker-service-statistic" />
       </profile>
     </annotationProcessing>

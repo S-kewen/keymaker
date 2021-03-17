@@ -12,11 +12,11 @@
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-encrypt/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-ip/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-ip/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-keymaker-service-parameter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-keymaker-service-parameter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-statistic/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-statistic/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-uuid/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-keymaker-service-uuid/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com-keymaker-service-parameter/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com-keymaker-service-parameter/src/main/resources" charset="UTF-8" />
   </component>
 </project>
