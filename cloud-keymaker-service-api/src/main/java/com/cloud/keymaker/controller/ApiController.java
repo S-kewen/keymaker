@@ -10,8 +10,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.Cache;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,7 +40,8 @@ public class ApiController {
     private String application;
     @Resource
     private DiscoveryClient discoveryClient;
-//    @Resource
+
+    //    @Resource
 //    CacheManager cacheManager;
     @RequestMapping("discovery")
     public Result discovery() {
@@ -66,9 +65,9 @@ public class ApiController {
         api.setState(state);
         api.setTitle(search);
         PageHelper.startPage(page, size, Util.sort(sortName, sortType));
-        List<Map<String, Object>> select = apiService.getList(api);
+        List<Map<String, Object>> select = apiService.getList(page, size, api);
         PageInfo<Map<String, Object>> pageInfo = new PageInfo<>(select);
-        return new Result(StatusCode.OK, StatusMsg.OK,pageInfo.getList() );
+        return new Result(StatusCode.OK, StatusMsg.OK, pageInfo.getList());
     }
 
     @RequestMapping("getApiInfo")
@@ -82,8 +81,8 @@ public class ApiController {
     }
 
     @RequestMapping("getCount")
-    public Result getCount(){
-        return new Result(StatusCode.OK, StatusMsg.OK,apiService.getCount(new Api()));
+    public Result getCount() {
+        return new Result(StatusCode.OK, StatusMsg.OK, apiService.getCount(new Api()));
     }
 
 //    @RequestMapping("clearCache")

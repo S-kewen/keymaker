@@ -27,7 +27,7 @@ public class ApiServiceImpl implements ApiService {
 
     @Override
     @Cacheable(cacheNames = "apiListCache")
-    public List<Map<String, Object>> getList(Api api) {
+    public List<Map<String, Object>> getList(int page, int size, Api api) {
         return dao.getList(api);
     }
 

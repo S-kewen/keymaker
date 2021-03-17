@@ -14,7 +14,7 @@ import java.util.Map;
  * @Date: 2021-03-06 18:22
  */
 public interface ApiService {
-    List<Map<String, Object>> getList(Api api);
+    List<Map<String, Object>> getList(int page, int size,Api api);
 
     int insertOne(Api api);
 

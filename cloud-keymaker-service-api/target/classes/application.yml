@@ -87,5 +87,12 @@ cache:
   #缓存key
   keys: #单位秒
     "{
-       apiListCache2: 1000
+       apiListCache: 1000
      }"
+
+# pageHelper分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
