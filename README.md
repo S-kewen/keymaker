@@ -1,5 +1,4 @@
 # keymaker
-demo：https://keymaker.iskwen.com/
 
 ## 簡介
 kemaker是一個穩定、快速、支持高並發、免費的API接口平台
