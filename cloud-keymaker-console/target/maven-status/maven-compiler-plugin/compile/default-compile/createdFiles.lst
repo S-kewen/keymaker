@@ -1,9 +1,0 @@
-com\cloud\keymaker\feign\ApiFeignService.class
-com\cloud\keymaker\controller\ConsoleController.class
-com\cloud\keymaker\hystrix\StatisticFallbackService.class
-com\cloud\keymaker\feign\ParameterFeignService.class
-com\cloud\keymaker\hystrix\ApiFallbackService.class
-com\cloud\keymaker\config\FeignConfig.class
-com\cloud\keymaker\feign\StatisticFeignService.class
-com\cloud\keymaker\config\ControllerExceptionHandler.class
-com\cloud\keymaker\ConsoleMain8001.class
